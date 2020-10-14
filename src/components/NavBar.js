@@ -1,13 +1,19 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
     render() {
         return (
             <div>
                 <nav className="nav">
-          <div className="left-div">
-            <img src = "https://www.flaticon.com/svg/static/icons/svg/321/321834.svg" alt = "logo-img"></img>
+                  <Link to = "/">
+          <div className="logo">
+           
+            <img src = "https://www.flaticon.com/svg/static/icons/svg/321/321834.svg" alt = "logo-img"/>
+                     
+            <span>SocioFy</span>
           </div>
+          </Link>
           <div className="search-container">
             <img className = "search-icon" src = "https://www.flaticon.com/svg/static/icons/svg/1007/1007692.svg" alt = "search-icon"></img>
             <input placeholder = "search"></input>
@@ -36,9 +42,9 @@ class NavBar extends React.Component {
             </div>
             <div className = "nav-links">
               <ul>
-                <li>Log In</li>
+                <Link to="/login"><li>Log In</li></Link> 
+                <Link to ="/signup"><li>Register</li></Link>
                 <li>Log out</li>
-                <li>Register</li>
 
               </ul>
             </div>
