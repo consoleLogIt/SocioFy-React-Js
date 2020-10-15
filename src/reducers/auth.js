@@ -2,7 +2,7 @@ import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILED } from "../actions/actionTypes
 
 
 
-initialAuthState = {
+let initialAuthState = {
     user:{},
     error:null,
     isLoggedIn:false,
@@ -20,6 +20,7 @@ export default function auth(state = initialAuthState,action){
                 ...state,
                 user:action.user,
                 isLoggedIn:true,
+                inProgress:false,
                 error:null
             };
             case LOGIN_FAILED:
