@@ -1,23 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Login(props) {
-    return (
-        <div>
-           <form className="login-form">
+class Login extends Component {
+    constructor(props){
+        super(props);
+        this.emailInputRef = React.createRef();
+        this.passwordInputRef = React.createRef();
+    }
+    handleFormSubmit = () => {
+        console.log("this.emailRef",this.emailInputRef);
+        console.log("this.passRef",this.passwordInputRef);
+
+    }
+    render() {
+        return (
+            <div>
+                    <form className="login-form">
                <span className = "login-signup-header">Log In</span>
                <div className= "field">
-                   <input type = "email" placeholder = "Email" required />
+                   <input type = "email" placeholder = "Email" required  ref = {this.emailInputRef}/>
                    </div>
                    <div className="field">
-                   <input type = "password" placeholder = "Password" required />
+                   <input type = "password" placeholder = "Password" required ref = {this.passwordInputRef} />
                    </div>
                    <div className="field">
-                       <button>Log In</button>
+                       <button onClick = {this.handleFormSubmit}>Log In</button>
                    </div>
 
-               </form> 
-        </div>
-    );
+               </form>   
+            </div>
+        );
+    }
 }
 
 export default Login;
